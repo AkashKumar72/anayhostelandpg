@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel & PG</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            padding-top: 56px; /* Adjust top padding for fixed navbar */
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .section-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .section-header h2 {
+            font-size: 3.0rem;
+            margin-bottom: 20px;
+        }
+        .section-header p {
+            font-size: 1.25rem;
+        }
+        .card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .price-plan-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .price-plan-table th, .price-plan-table td {
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+        }
+        .price-plan-table th {
+            background-color: #343a40;
+            color: #F3B229;
+        }
+        .price-plan-table td {
+            background-color: #f8f9fa;
+        }
+        .price-plan-table th {
+            background-color: #2B2B81;
+        }
+        .food-menu {
+            list-style-type: none;
+            padding: 0;
+        }
+        .food-menu li {
+            padding: 10px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .food-menu li:last-child {
+            border-bottom: none;
+        }
+        .facilities-section .facility-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+        .hero-section {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #2B2B81;
+            padding: 0 20px;
+        }
+        .hero-text {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+        .hero-svg {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .hero-svg svg {
+            max-width: 100%;
+            height: auto;
+        }
+        .navbar {
+            background-color: #2B2B81;
+        }
+        .navbar-brand img {
+            max-height: 40px;
+        }
+        .nav-link {
+            color: #ffffff !important;
+            display: flex;
+            align-items: center;
+        }
+        .nav-link i {
+            margin-right: 8px;
+        }
+        .nav-link:hover {
+            color: #cccccc !important;
+        }
+        .btn-booking {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+        }
+        .btn-booking:hover {
+            background-color: #0056b3;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Space between buttons */
+            margin-top: 20px; /* Space above buttons */
+        }
+
+        .btn {
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-check-availability {
+            background-color: #F3B229; /* Button color */
+            color: #ffffff;
+            border: none;
+        }
+
+        .btn-check-availability:hover {
+            background-color: #e68900; /* Hover color */
+        }
+
+        .btn-book-now {
+            background-color: #3AC379; /* Button color */
+            color: #ffffff;
+            border: none;
+        }
+
+        .btn-book-now:hover {
+            background-color: #0056b3; /* Hover color */
+        }
+
+        .hero-svg {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            max-width: 50%; /* Ensure it takes up no more than half */
+        }
+
+        .hero-svg img {
+            max-width: 100%;
+            height: auto;
+        }
+        .hero-text {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .hero-text h1 {
+            font-size: 4.5rem;
+            font-weight: 900; /* Extra bold */
+            margin: 0;
+            line-height: 1.2;
+            animation: textAnimation 3s ease-in-out infinite;
+        }
+
+        .hero-text h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-top: 10px;
+            animation: textAnimation 3s ease-in-out infinite;
+        }
+
+        /* Animation */
+        @keyframes textAnimation {
+            0% { opacity: 0.8; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(-10px); }
+            100% { opacity: 0.8; transform: translateY(0); }
+        }
+
+        .hero-svg {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .hero-svg img {
+            max-width: 100%;
+            height: auto;
+        }
+        .card-title{
+        	color:#2B2B81;
+               font-size:2.0rem;
+        }
+        
+        
+/*food menu css */
+        
+  /* Ensure table and cells have some styling */
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table th, .table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Keyframes for professional glowing animation */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 10px rgba(243, 178, 41, 0.5), 0 0 20px rgba(243, 178, 41, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(243, 178, 41, 0.7), 0 0 30px rgba(243, 178, 41, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(243, 178, 41, 0.5), 0 0 20px rgba(243, 178, 41, 0.3);
+    }
+}
+
+/* Cell Highlight Effect with Enhanced Animation */
+.table td.highlight {
+    background-color: rgba(243, 178, 41, 0.4); /* Dimmed background color for the cell */
+    border-color: rgba(43, 43, 129, 0.5); /* Dimmed border color */
+    animation: pulse-glow 1.5s infinite; /* Enhanced pulsing glow effect */
+    position: relative;
+    z-index: 1; /* Ensure cell is on top during animation */
+}
+
+/* Row Highlight Effect */
+.table tr.highlight td {
+    background-color: rgba(243, 178, 41, 0.2); /* Less intense background color for row */
+    border-color: rgba(43, 43, 129, 0.2); /* Less intense border color for row */
+}
+
+/* Column Highlight Effect */
+.table td.highlight-col {
+    background-color: rgba(243, 178, 41, 0.2); /* Less intense background color for column */
+    border-color: rgba(43, 43, 129, 0.2); /* Less intense border color for column */
+}
+
+/* Ensure smooth highlighting and avoid shaking */
+.table td, .table th {
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Styling for table header to match theme */
+.table thead {
+    background-color: #2B2B81; /* Dark theme color for header */
+    color: #F3B229; /* Highlight color for text */
+}
+
+.table thead th {
+    font-size: 18px; /* Larger font size for header */
+    font-weight: bold;
+}
+
+/* Alternating row colors for better readability */
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light grey background for even rows */
+}
+
+/* Font size for table content */
+.table tbody td {
+    font-size: 16px; /* Font size for table content */
+}
+
+
+/*timing sec */
+/* Styling for the timing section */
+.timing-section {
+    background-color: #ffffff; /* White background for clean look */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd; /* Light border for separation */
+}
+
+.timing-section h3 {
+    color: #2B2B81; /* Dark color for main heading */
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center; /* Center align main heading */
+}
+
+.timing-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between each timing row */
+}
+
+.timing-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd; /* Light border for separation */
+}
+
+.timing-day {
+    font-size: 18px;
+    color: #2B2B81; /* Highlight color for day headings */
+    font-weight: bold;
+}
+
+.timing-details {
+    display: flex;
+    gap: 20px; /* Space between timing details */
+}
+
+.timing-details div {
+    font-size: 16px;
+    color: #333; /* Text color */
+}
+
+.meal-time {
+    font-weight: bold;
+    color: #F3B229; /* Highlight color for meal times */
+}
+
+/*about us*/
+/* Styling for the contact info section */
+.contact-info {
+    background-color: #F3B229; /* Background color to highlight the contact section */
+    padding: 20px;
+    border-radius: 8px;
+    color: #2B2B81; /* Text color to match theme */
+}
+
+.contact-info h4 {
+    margin-bottom: 15px;
+    font-size: 3.5rem; /* Size of the section title */
+}
+
+.contact-info address p {
+    margin: 5px 0;
+    font-size: 2rem; /* Font size for contact details */
+}
+
+.contact-info address p strong {
+    color: #2B2B81; /* Highlighted text color for labels */
+}
+
+/*refer and earn*/
+
+/* Styling for the Refer and Earn section */
+#refer-earn {
+    background: linear-gradient(135deg, #2B2B81, #F3B229); /* Gradient using theme colors */
+    color: #fff;
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Section Header Styling */
+.section-header {
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+}
+
+/* Refer Content Styling */
+.refer-content {
+    position: relative;
+}
+
+.refer-card {
+    position: fixed; /* Fixed position to stick the card to the left side */
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Center the card vertically */
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    color: #2B2B81;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Set width for the card */
+    animation: pulse-glow 2s infinite; /* Continuous glowing animation */
+    z-index: 10;
+    display: none; /* Hide the card initially */
+}
+
+/* Button Styling */
+.refer-btn {
+    background-color: #F3B229; /* Theme color */
+    color: #2B2B81; /* Text color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.refer-btn:hover {
+    background-color: #e0a530; /* Darker shade of the theme color for hover effect */
+}
+
+.btn-hide {
+    background-color: #2B2B81; /* Theme color */
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-hide:hover {
+    background-color: #1a1a6b; /* Darker shade of the theme color for hover effect */
+}
+
+/* Continuous Glow Animation */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 10px rgba(243, 178, 41, 0.5), 0 0 20px rgba(243, 178, 41, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(243, 178, 41, 0.7), 0 0 30px rgba(243, 178, 41, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(243, 178, 41, 0.5), 0 0 20px rgba(243, 178, 41, 0.3);
+    }
+}
+
+/*refer and earn*/
+
+/* Section styling with animated gradient background */
+#refer-earn {
+    position: relative;
+    overflow: hidden;
+    padding: 60px 0; /* Increase padding for better visual appeal */
+    color: #fff; /* Light text color for contrast */
+    background: linear-gradient(135deg, #2B2B81, #F3B229); /* Initial gradient background */
+    background-size: 200% 200%; /* Make background larger for smooth animation */
+    animation: gradientMove 10s linear infinite; /* Apply horizontal animation */
+}
+
+/* Keyframes for horizontal gradient animation */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Container for the content */
+.refer-earn-box {
+    background: #2B2B81; /* Background color for the card */
+    color: #F3B229; /* Text color */
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animation for the box expanding effect */
+@keyframes expandContent {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Apply animation to the content inside the box */
+.refer-earn-box .content {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.refer-earn-box:hover .content {
+    animation: expandContent 1s ease forwards; /* Apply expand effect on hover */
+}
+
+/* Enhanced animation for the box */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(243, 178, 41, 0.5);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(243, 178, 41, 0.7);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(243, 178, 41, 0.5);
+    }
+}
+
+.refer-earn-box:hover {
+    animation: pulse 2s infinite; /* Apply pulsing effect on hover */
+}
+
+/* Icon container */
+.icon-container {
+    margin-bottom: 15px;
+}
+
+.icon {
+    width: 80px; /* Adjust icon size */
+    height: auto;
+}
+
+/* Button styling */
+.btn-light {
+    background-color: #F3B229; /* Theme color */
+    color: #2B2B81; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-light:hover {
+    background-color: #e2a528; /* Slightly darker shade on hover */
+    color: #fff;
+}
+
+/* Text link styling */
+a.text-light {
+    color: #F3B229; /* Theme color for links */
+    text-decoration: none;
+}
+
+a.text-light:hover {
+    text-decoration: underline;
+}
+
+
+/*contact modal*/
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 400px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-light {
+    background-color: #F3B229; /* Theme color */
+    color: #2B2B81; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.btn-light:hover {
+    background-color: #e2a528; /* Slightly darker shade on hover */
+    color: #fff;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">
+        <img src="imgs/logo.jpeg" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#home"><i class="fas fa-home"></i>Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#services"><i class="fas fa-concierge-bell"></i>Our Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#food-menu"><i class="fas fa-utensils"></i>Food Menu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#price-plan"><i class="fas fa-tag"></i>Price Plan</a>
+            </li>
+           
+            <li class="nav-item">
+                <a class="nav-link" href="#about-us"><i class="fas fa-info-circle"></i>About Us</a>
+            </li>
+            <li class="nav-item">
+                <a href="https://wa.me/8808829249?text=Hi%2C%20I%20would%20like%20to%20book%20a%20room.%20Please%20provide%20more%20details." class="btn btn-book-now" target="_blank"> <i class="fas fa-calendar-check"></i>Book Now</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+    <div class="hero-text">
+        <h1><font color="#F3B229">Stay Smart, Stay Happy <br>at</font><font color="white"> Anay Hostel & PG </h1>
+        <h2>Affordable and comfortable accommodation for students and professionals. Your ideal stay awaits!</font></h2>
+         <div class="hero-buttons">
+        </div>
+    </div>
+    <div class="hero-svg">
+        <!-- Example SVG -->
+       <img src="imgs/landing.svg" alt="Hostel SVG" style="width: 100%; height: auto;">
+
+    </div>
+</section>
+
+<!-- Our Services Section -->
+<section id="services" class="container mt-5">
+    <h2 class="text-center mb-4">Our Services</h2>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+	       <img src="imgs/wifi.svg" alt="Hostel SVG" style="width: 100%; height: auto;">
+                <div class="card-body">
+                    <h5 class="card-title">Free WiFi</h5>
+                    <p class="card-text">Stay connected with high-speed internet available throughout the property.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+	       <img src="imgs/washing.svg" alt="Hostel SVG" style="width: 100%; height: auto;">
+                <div class="card-body">
+                    <h5 class="card-title">Laundry Service</h5>
+                    <p class="card-text">Enjoy convenient laundry services with quick turnaround times.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+	       <img src="imgs/food.svg" alt="Hostel SVG" style="width: 100%; height: auto;">
+                <div class="card-body">
+                    <h5 class="card-title">Nutritious Food</h5>
+                    <p class="card-text">Enjoy healthy and delicious meals prepared with care.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+	       <img src="imgs/cctv.svg" alt="Hostel SVG" style="width: 100%; height: auto;">
+                <div class="card-body">
+                    <h5 class="card-title">24/7 Security</h5>
+                    <p class="card-text">Your safety is our priority with round-the-clock security measures in place.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+	       <img src="imgs/table.svg" alt="Hostel SVG" style="width: 100%; height: auto;">
+                <div class="card-body">
+                    <h5 class="card-title">Study Table & Chair</h5>
+                    <p class="card-text">Each room is equipped with a study table and chair for your convenience.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+	       <img src="imgs/locker.svg" alt="Hostel SVG" style="width: 100%; height: auto;">
+                <div class="card-body">
+                    <h5 class="card-title">Separate Almirah</h5>
+                    <p class="card-text">Private storage space for your belongings in each room.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+	       <img src="imgs/clean.svg" alt="Hostel SVG" style="width: 100%; height: auto;">
+                <div class="card-body">
+                    <h5 class="card-title">Room Cleaning</h5>
+                    <p class="card-text">Regular room cleaning to ensure a fresh and pleasant environment.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+	       <img src="imgs/backup.svg" alt="Hostel SVG" style="width: 100%; height: auto;">
+                <div class="card-body">
+                    <h5 class="card-title">Inverter Backup</h5>
+                    <p class="card-text">Reliable power backup to ensure uninterrupted services.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+	       <img src="imgs/parking.svg" alt="Hostel SVG" style="width: 100%; height: auto;">
+                <div class="card-body">
+                    <h5 class="card-title">Parking Space</h5>
+                    <p class="card-text">Ample parking space available for residents and visitors.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--refer and earn-->
+<section id="refer-earn" class="section bg-primary text-light py-5 mt-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Refer and Earn</h2>
+        <p class="mb-4">Invite your friends to stay with us and earn ₹500 for each successful referral!</p>
+        <div class="refer-earn-box mx-auto mb-4">
+            <div class="icon-container">
+                <img src="imgs/refer.png" alt="Refer and Earn" class="icon">
+            </div>
+            <h3>Earn ₹500</h3>
+            <p>For every friend you refer who books a stay with us.</p>
+            <a href="https://wa.me/?text=Hey! I just discovered a great place to stay. Check out this hostel where you can enjoy comfortable living and great amenities. You can earn ₹500 by referring friends! %0A%0AContact: 8808829249%0A%0ACheck it out here: www.anayhostel.com" class="btn btn-light" target="_blank" rel="noopener noreferrer">Refer Now</a>
+        </div>
+        <p class="mt-4">For more details, contact us at <a href="tel:8808829249" class="text-light">8808829249</a> or <a href="tel:7248532208" class="text-light">7248532208</a>.</p>
+    </div>
+</section>
+
+
+<!-- Food Menu Section -->
+ <section id="food-menu" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Food Menu</h2>
+                <p>Check out our weekly menu offering a variety of delicious meals.</p>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered food-menu-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Breakfast</th>
+                            <th>Lunch</th>
+                            <th>Dinner</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Monday</strong></td>
+                            <td>Aloo Sukhi Sabji + Plain Paratha + Tea</td>
+                            <td><em>Same as Breakfast</em></td>
+                            <td>Chole Chawal + Kheer Puri</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tuesday</strong></td>
+                            <td>Aloo Paratha + Tea</td>
+                            <td><em>Same as Breakfast</em></td>
+                            <td>Roti + Rice + Dal Makhani</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wednesday</strong></td>
+                            <td>Roti + Sabji + Tea</td>
+                            <td><em>Same as Breakfast</em></td>
+                            <td>Matar Paneer + Roti + Rice</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Thursday</strong></td>
+                            <td>Aloo Paratha + Tea</td>
+                            <td><em>Same as Breakfast</em></td>
+                            <td>Mix Veg + Roti + Rice + Curd</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Friday</strong></td>
+                            <td>Aloo Chana/Soybean + Roti</td>
+                            <td><em>Same as Breakfast</em></td>
+                            <td>Kadhi chawal (Curd Curry with Rice)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Saturday</strong></td>
+                            <td>Poha  + Tea</td>
+                            <td>Rajma Chawal</td>
+                            <td>Seasonal Sabji + Roti + Rice</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sunday</strong></td>
+                            <td>Bread Sandwich/Macaroni + Tea</td>
+                            <td>Chole Bhature/Tehri</td>
+                            <td>Roti + Dal Tadka + Rice + Salad</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Timing Section -->
+        <div class="timing-section mt-5">
+            <h3>Meal Timings</h3>
+            <div class="timing-info">
+                <div class="timing-row">
+                    <div class="timing-day">Monday to Friday</div>
+                    <div class="timing-details">
+                        <div><span class="meal-time">Breakfast:</span> 8:00 AM to 10:00 AM</div>
+                        <div><span class="meal-time">Dinner:</span> 8:00 PM to 10:00 PM</div>
+                    </div>
+                </div>
+                <div class="timing-row">
+                    <div class="timing-day">Saturday & Sunday</div>
+                    <div class="timing-details">
+                        <div><span class="meal-time">Breakfast:</span> 8:00 AM to 10:00 AM</div>
+                        <div><span class="meal-time">Lunch:</span> 12:30 PM to 2:00 PM</div>
+                        <div><span class="meal-time">Dinner:</span> 8:00 PM to 10:00 PM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        </div>
+    </section>
+
+<!-- Price Plan Section -->
+<section id="price-plan" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Price Plan</h2>
+            <p>Choose the room type that suits your needs.</p>
+        </div>
+        <table class="price-plan-table">
+            <thead>
+                <tr>
+                    <th>Room Type</th>
+                    <th>Monthly Rate (Attached Washroom)</th>
+                    <th>Monthly Rate (Common Washroom)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Single Sharing</td>
+                    <td>₹8500 </td>
+                    <td>₹8000 </td>
+                </tr>
+                 <tr>
+                    <td>Double Sharing</td>
+                    <td>₹6000 </td>
+                    <td>₹5500 </td>
+                </tr>
+                 <tr>
+                    <td>Triple Sharing</td>
+                    <td>₹5000 </td>
+                    <td>₹4500 </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- About Us Section -->
+<section id="about-us" class="section bg-light">
+    <div class="container">
+        <div class="section-header">
+            <h2>About Us</h2>
+            <p>Learn more about our mission and values.</p>
+        </div>
+        <p>Welcome to our hostel, where comfort and community come together. Our mission is to provide a safe and nurturing environment for students and professionals seeking a home away from home. Located in a prime area, our facility offers a range of amenities designed to cater to the needs of our residents.</p>
+        
+        <p>At our hostel, we believe in creating a space where you can thrive both personally and professionally. Our rooms are designed with your comfort in mind, featuring modern furnishings and a cozy ambiance. We offer high-speed internet, nutritious meals, and convenient laundry services to make your stay as pleasant as possible.</p>
+        
+        <p>Our dedicated team is committed to ensuring that every resident feels valued and supported. From 24/7 security to regular room cleaning, we prioritize your safety and well-being. Our communal areas are perfect for relaxation and socializing, fostering a sense of community among our residents.</p>
+        
+        <p>Whether you’re here for a short visit or a long-term stay, we strive to make your experience memorable and enjoyable. Explore the variety of services and amenities we offer, and let us be your trusted partner in making your stay comfortable and fulfilling.</p>
+        
+        <div class="contact-info mt-4">
+            <h4>Contact Us</h4>
+            <address>
+                <p><strong>Address:</strong> Avni Hospital, First Floor, Chakeri Ward, Allahabad Hwy, Kanpur 208008</p>
+		<p> <strong>Mobile:</strong>  
+		    <a href="#" class="phone-link" data-phone="8808829249">8808829249</a>,  
+		    <a href="#" class="phone-link" data-phone="7248532208">7248532208</a>
+		</p>
+
+		<!-- Modal Structure -->
+		<div id="phone-modal" class="modal">
+		    <div class="modal-content">
+			<span class="close-button">&times;</span>
+			<p>What would you like to do?</p>
+			<a id="call-link" href="#" class="btn btn-light">Call</a>
+			<a id="whatsapp-link" href="#" target="_blank" class="btn btn-light">WhatsApp</a>
+		    </div>
+		</div>
+
+            </address>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="text-white text-center py-3" style="background-color:#2B2B81">
+    <p>&copy; 2024 Hostel & PG. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const table = document.querySelector('.food-menu-table');
+
+    // Handle mouseover event
+    table.addEventListener('mouseover', function(event) {
+        const cell = event.target.closest('td');
+        if (cell) {
+            const colIndex = cell.cellIndex;
+            const rowIndex = cell.parentElement.rowIndex;
+
+            // Remove previous highlights
+            table.querySelectorAll('td').forEach(c => {
+                c.classList.remove('highlight');
+                c.classList.remove('highlight-col');
+            });
+            table.querySelectorAll('tr').forEach(r => {
+                r.classList.remove('highlight');
+            });
+
+            // Highlight column
+            table.querySelectorAll('td').forEach(c => {
+                if (c.cellIndex === colIndex) {
+                    c.classList.add('highlight-col');
+                }
+            });
+
+            // Highlight row
+            table.querySelectorAll('tr').forEach(r => {
+                if (r.rowIndex === rowIndex) {
+                    r.classList.add('highlight');
+                }
+            });
+
+            // Highlight the hovered cell
+            cell.classList.add('highlight');
+        }
+    });
+
+    // Handle mouseout event
+    table.addEventListener('mouseout', function(event) {
+        table.querySelectorAll('td').forEach(c => {
+            c.classList.remove('highlight');
+            c.classList.remove('highlight-col');
+        });
+        table.querySelectorAll('tr').forEach(r => {
+            r.classList.remove('highlight');
+        });
+    });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const phoneLinks = document.querySelectorAll('.phone-link');
+    const modal = document.getElementById('phone-modal');
+    const callLink = document.getElementById('call-link');
+    const whatsappLink = document.getElementById('whatsapp-link');
+    const closeButton = document.querySelector('.close-button');
+
+    let selectedPhoneNumber = '';
+
+    phoneLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            selectedPhoneNumber = link.getAttribute('data-phone');
+            callLink.href = `tel:${selectedPhoneNumber}`;
+            whatsappLink.href = `https://wa.me/${selectedPhoneNumber}?text=Hi%2C%20I%20would%20like%20to%20book%20a%20room.%20Please%20provide%20more%20details.`;
+            modal.style.display = 'block';
+        });
+    });
+
+    closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+
+</script>
+</body>
+</html>
+
